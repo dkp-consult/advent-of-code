@@ -21,5 +21,5 @@ const lastAnswerTwo = allAnswer[allAnswer.length - 2];
 const lastAnswerThree = allAnswer[allAnswer.length - 3];
 const finalAnswer = (lastAnswer + lastAnswerTwo + lastAnswerThree);
 
-
+console.log(lastAnswer)
 console.log(finalAnswer)
