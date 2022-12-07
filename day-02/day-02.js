@@ -3,8 +3,17 @@ const path = require('path');
 
 const input = fs.readFileSync(path.join(__dirname, 'data.txt')).toString();
 
-console.log(input)
+const gamesInput = input
+    .replace(/\r/g, "")
+    .trim()
+    .split("\n")
+    .map((line) => line.split(" "));
 
+console.log(gamesInput);
+
+// const rockAgainstPaper = gamesInput.filter(['A', 'Y'], gamesInput);
+
+// console.log(filterItems(gamesInput, "A"));
 /* 
 
 myOpposant [
@@ -23,9 +32,5 @@ Win = 6
 Draw = 3
 Lost = 0 */
 
-const score =
-[   X = 1,
-    Y = 2,
-    Z = 3
-]
-console.log(score)
+//
+

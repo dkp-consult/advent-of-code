@@ -23,3 +23,4 @@ const finalAnswer = (lastAnswer + lastAnswerTwo + lastAnswerThree);
 
 console.log(lastAnswer)
 console.log(finalAnswer)
+console.log(elfCalories)
