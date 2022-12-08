@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const input = fs.readFileSync(path.join(__dirname, 'data.txt')).toString();
+
 const gamesInput = input
     .replace(/\r/g, "")
     .trim()
@@ -43,7 +44,7 @@ function partOne (){
     const plays = gamesInput.map((line) => {
         const opponentMove = mapInput[line[0]];
         const ourMove = mapInput[line[1]];
-        return score(opponentMove, ourMove)
+        return score(opponentMove, ourMove);
     });
     console.log(plays.reduce((a, b) => a + b, 0));
 }
@@ -70,36 +71,14 @@ const solution = {
 
 partOne();
 
-function partTwo(){
-    const plays = gamesInput.map((line) => {
-        const opponentMove = mapInput[line[0]];
-        const ourMove = solution[line[0]][line[1]];
-        return score(opponentMove, ourMove);
+function partTwo() {
+    const outcomes = gamesInput.map((line) => {
+      const opponentMove = mapInput[line[0]];
+  
+      // Guess our move from the instructions
+      const ourMove = solution[line[0]][line[1]];
+  
+      return score(opponentMove, ourMove);
     });
-    console.log(plays.reduce((a, b) => a + b, 0));
-}
-
-partTwo();
-/* My methode, but I can't finish that challenge, I hate that... 
-
-var score = 0;
-
-function moveScore() {
-    if (myMove === 'X') {
-        return score =+ 1
-    } else if (myMove === 'Y') {
-        return score =+ 2
-    } else if (myMove === 'Z') {
-        return score =+ 3
-    };
-}
-
-var myMove = gamesInput[2][1];
-
-
-
-// Pour gamesInput[n][1] appeller la fonction moveScore et incrémenter la variable score pour compter le nombre de points
-
-*/ 
-
-
+    console.log(outcomes.reduce((a, b) => a + b, 0));
+  }
