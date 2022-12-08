@@ -9,28 +9,25 @@ const gamesInput = input
     .split("\n")
     .map((line) => line.split(" "));
 
-console.log(gamesInput);
+var score = 0;
 
-// const rockAgainstPaper = gamesInput.filter(['A', 'Y'], gamesInput);
+function moveScore() {
+    if (myMove === 'X') {
+        return score =+ 1
+    } else if (myMove === 'Y') {
+        return score =+ 2
+    } else if (myMove === 'Z') {
+        return score =+ 3
+    };
+}
 
-// console.log(filterItems(gamesInput, "A"));
-/* 
+const myMove = gamesInput[0][1];
 
-myOpposant [
-    A = Rock
-    B = Paper
-    C = Scissors
-]
+console.log(moveScore(myMove));
+// Parcourir le tableau de mouvement et incrémenter le score en fonction des valeurs de la fonction moveScore 
 
-mySelf [ 
-    X = Rock = 1
-    Y = Paper = 2
-    Z = Scissors = 3
-]
-
-Win = 6
-Draw = 3
-Lost = 0 */
-
-//
-
+/*
+A = Rock
+B = Paper
+C = Scissors
+*/
