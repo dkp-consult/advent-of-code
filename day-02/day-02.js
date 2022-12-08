@@ -9,6 +9,8 @@ const gamesInput = input
     .split("\n")
     .map((line) => line.split(" "));
 
+/* My methode, but I can't finish that challenge, I hate that... 
+
 var score = 0;
 
 function moveScore() {
@@ -21,13 +23,12 @@ function moveScore() {
     };
 }
 
-const myMove = gamesInput[0][1];
+var myMove = gamesInput[2][1];
 
-console.log(moveScore(myMove));
-// Parcourir le tableau de mouvement et incrémenter le score en fonction des valeurs de la fonction moveScore 
 
-/*
-A = Rock
-B = Paper
-C = Scissors
-*/
+
+// Pour gamesInput[n][1] appeller la fonction moveScore et incrémenter la variable score pour compter le nombre de points
+
+*/ 
+
+
