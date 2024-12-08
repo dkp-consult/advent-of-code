@@ -43,7 +43,37 @@ const part1 = () => {
 };
 
 const part2 = () => {
-    return "Part 2 not implemented yet."; // Message clair pour la partie non implémentée
+    const grid = input.trim().split('\n');
+    const word1 = "MAS";
+    const word2 = "SAM";
+    let count = 0;
+
+    const isValid = (x, y) => x >= 0 && y >= 0 && x < grid.length && y < grid[0].length;
+
+    for (let i = 1; i < grid.length - 1; i++) {
+        for (let j = 1; j < grid[i].length - 1; j++) {
+            // Vérifier la diagonale principale
+            const diag1 = [
+                grid[i-1][j-1], // Haut-gauche
+                grid[i][j],     // Centre
+                grid[i+1][j+1]  // Bas-droite
+            ].join('');
+
+            // Vérifier la diagonale secondaire
+            const diag2 = [
+                grid[i-1][j+1], // Haut-droite
+                grid[i][j],     // Centre
+                grid[i+1][j-1]  // Bas-gauche
+            ].join('');
+
+            // Vérifier si les diagonales forment un X-MAS
+            if ((diag1 === word1 || diag1 === word2) && (diag2 === word1 || diag2 === word2)) {
+                count++;
+            }
+        }
+    }
+
+    return count; // Retourner le nombre total d'occurrences
 };
 
 console.log("Part 1:", part1());
